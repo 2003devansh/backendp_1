@@ -1,14 +1,12 @@
 const mongoose  = require("mongoose") ;
 const config  = require("config") ;
+const dbgr  = require("debug")("development:mongoose")
 
-
-const dbr  = require("debug")("development:mongoose")
-
-mongoose.connect(`${config.get("MONGODB_URI")}/`)
+mongoose.connect(`${config.get("MONGODB_URI")}/scratch`)
 .then(function(){
-    dbr("connected to db");
+    dbgr("connected to db");
 }).catch(function(err){
-    dbr(err);
+    dbgr(err);
 })
 
 // conected to db tab tak print nhi hoga jab  tak ham emviroment varialbe set

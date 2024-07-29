@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const { type } = require('os');
 
 
-const ownerSchemaSchema = mongoose.Schema({
+const ownerSchema = mongoose.Schema({
   fullName: {
     type: String,
     required: true,
