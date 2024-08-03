@@ -8,6 +8,5 @@ mongoose.connect(`${config.get("MONGODB_URI")}/scratch`)
 }).catch(function(err){
     dbgr(err);
 })
-
-// conected to db tab tak print nhi hoga jab  tak ham emviroment varialbe set
+ // conected to db tab tak print nhi hoga jab  tak ham emviroment varialbe set
 // nhi karte 
