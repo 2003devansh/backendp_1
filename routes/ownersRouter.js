@@ -13,9 +13,17 @@ if(process.env.NODE_ENV === "development"){
     router.post("/create" , async (req,res)=>{
        let owners  = await ownerModel.find() ;
        if(owners.length > 0 ){
-        return res.send(503).send("ypu don't have the authority ")
+        return res.status(503).send("ypu don't have the authority ")
        }
-       res.send("we can create owner")
+      let {fullName , email , password}   = req.body ;
+      let createdOwner  = await ownerModel.create({
+        fullName ,
+        email ,
+        password 
+      })
+
+
+      res.status(201).send(createdOwner) ; 
     })
 }
 // jab tak hamara node ka envioment developpmentmai set hai tab tal yeh route chalega

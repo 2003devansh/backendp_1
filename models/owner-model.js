@@ -7,16 +7,13 @@ const { type } = require('os');
 const ownerSchema = mongoose.Schema({
   fullName: {
     type: String,
-    required: true,
     trim: true
   },
   email: {
     type: String,
-    required: true,
   },
   password: {
     type: String,
-    required: true
   },
   products: {
     type: Array,
